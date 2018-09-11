@@ -1,0 +1,94 @@
+<section class="offers-page">
+
+  <div class="row mx-0">
+    <div class="col-lg-8 col-12">
+      <div class="row">
+        <h4 class="text-center col-12">Dispaly All Offers</h4>
+        <div class=" col-md-12 my-0 mx-auto col-12">
+          <div class="content d-flex flex-column align-items-center box-statictics alert alert-info border-0 mx-0 mt-0">
+            <i class="fa fa-gift" aria-hidden="true"></i>
+            <div class="num font-weight-bold">{{offersCount}}</div>
+            <div>Total Offers</div>
+          </div>
+        </div>
+        <div class="col-md-6 col-12 " *ngFor="let offer of offers; let i = index">
+          <div class="user card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <div>
+                <p class="mb-0"><a class="offer-name" [routerLink]="['/offers',offers[i]?._id]">{{offers[i]?.title}}</a></p>
+                <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                {{offers[i]?.discound}} Discount
+              </div>
+              <a [routerLink]="['/offers',offers[i]._id]"><img class="img-fluid user-img" src="{{offers[i].imgs}}"></a>
+              <div>
+                <i (click)="onEditOffer(offers[i])" class="fa fa-pencil-square-o text-info edit-icon" aria-hidden="true"></i>
+              </div>
+
+            </div>
+
+            <div class="card-body">
+              <p><i class="fa fa-id-card-o" aria-hidden="true"></i>
+                {{offers[i]?._id}}
+              </p>
+              <p><i class="fa fa-trophy" aria-hidden="true"></i>
+                {{offers[i]?.brandName}}
+              </p>
+              <p><i *ngIf="offers[i].avaliable" class="fa fa-check-circle-o" aria-hidden="true"></i>
+                <i *ngIf="!offers[i].avaliable" class="fa fa-times-circle-o" aria-hidden="true"></i>
+                avaliable: <span *ngIf="offers[i].avaliable">{{'Yes'}}</span><span *ngIf="!offers[i].avaliable">{{'No'}}</span>
+              </p>
+              <p><i class="fa fa-level-up" aria-hidden="true"></i>
+                Before : {{offers[i].pricepreDisc}} L.E
+              </p>
+              <p><i class="fa fa-level-down" aria-hidden="true"></i>
+                After Discount: {{offers[i].pricepostDisc}} L.E
+              </p>
+
+              <p><i class="fa fa-info" aria-hidden="true"></i>
+                {{offers[i].desc}}
+              </p>
+
+              <p class="mb-0"><i class="fa fa-calendar" aria-hidden="true"></i>
+                {{offers[i].creationDate}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+        <h4>Add New Offer</h4>
+        <form (submit)="onAddOffer(editMode)" #f="ngForm">
+          <div class="form-group">
+            <input type="text"  [ngModel]="offer?._id"  name="offer-id" class="form-control" placeholder="Enter ID">
+          </div>
+          <div class="form-group">
+            <input type="text" [(ngModel)]="offer.brandName" name="offer-brand-name" class="form-control" placeholder="Brand Name">
+          </div>
+          <div class="form-group">
+            <input type="text" [(ngModel)]="offer.title" name="offer-title" class="form-control" placeholder="Enter Title">
+          </div>
+          <div class="form-group">
+            <input type="text" [(ngModel)]="offer.desc" name="offer-desc" class="form-control" placeholder="Enter Description">
+          </div>
+          <div class="form-group">
+            <input type="text" [(ngModel)]="offer.discound" name="offer-discound" class="form-control" placeholder="Discound">
+          </div>
+          <div class="form-group">
+            <input type="text" [(ngModel)]="offer.pricepreDisc" name="offer-price-pre-disc" class="form-control" placeholder="Pre price">
+          </div>
+          <div class="form-group">
+            <input type="text" [(ngModel)]="offer.pricepostDisc" name="offer-price-post-disc" class="form-control" placeholder="post price">
+          </div>
+          <div class="form-group">
+            <input type="file" (change)="fileChangeEvent($event)" name="offer-imgs" class="form-control-file" id="exampleFormControlFile1" multiple>
+          </div>
+          <button type="submit" class="btn btn-action border-0">
+            Add / Update
+           <img *ngIf="showLoader" class="loader" src="../../../../assets/images/ajax-loading-gif-transparent.gif" />
+          </button>
+        </form>
+      </div>
+
+  </div>
+</section>

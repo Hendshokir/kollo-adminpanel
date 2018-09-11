@@ -1,0 +1,12 @@
+.card-header {
+  min-height: 77px;
+}
+
+.edit-icon {
+  cursor: pointer;
+}
+
+input:focus {
+  box-shadow: none;
+  border-color: #ced4da;
+}

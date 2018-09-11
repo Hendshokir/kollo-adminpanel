@@ -1,0 +1,13 @@
+.content i {
+  font-size: 38px;
+}
+
+.content .num {
+  font-size: 38px;
+  color: #e56e1f;
+  font-family: 'Merienda', cursive;
+}
+
+.alert-info {
+  background-color: #e4e6e7;
+}

@@ -1,0 +1,21 @@
+
+<section class="login-page d-flex">
+  <div class="overlay w-100 h-100"></div>
+  <form  #f="ngForm" (submit)="DoLogin()" class="col-md-4 col-12 m-auto">
+    <h2 class="text-center">Admin Login</h2>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Phone</label>
+      <input type="tel" class="form-control" id="exampleInputTel1" placeholder="Phone" [(ngModel)]="user.phone" [ngModelOptions]="{standalone:
+        true}">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" [(ngModel)]="user.password" [ngModelOptions]="{standalone:
+        true}">
+    </div>
+    <button type="submit" class="btn d-block m-auto">
+      Submit
+      <img *ngIf="showLoader" class="loader" src="../../../../assets/images/ajax-loading-gif-transparent.gif" />
+    </button>
+  </form>
+</section>

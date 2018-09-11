@@ -1,0 +1,40 @@
+nav {
+  padding: 0;
+}
+
+.navbar-brand {
+  color: #fd8f46;
+  text-transform: uppercase;
+  white-space: pre-wrap;
+  font-family: 'Merienda', cursive;
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #aea6a1bd;
+  margin: 0;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+i {
+  margin-right: 15px;
+  color: #E56E1F;
+}
+
+.nav-link {
+  color: #fff;
+  font-family: 'Merienda', cursive;
+  font-size: 18px;
+}
+
+li {
+  padding: 0 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+li.active {
+  background-color: #f8f9fae6;
+}
+
+li.active .nav-link {
+  color: #E56E1F;
+}

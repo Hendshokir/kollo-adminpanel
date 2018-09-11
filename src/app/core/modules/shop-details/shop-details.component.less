@@ -1,0 +1,143 @@
+.product {
+  display: flex;
+  margin: 1em 0;
+  border-radius: 5px;
+  box-shadow: 0 0 21px 3px rgba(0, 0, 0, 0.15);
+  transition: all .1s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 0 21px 3px rgba(0, 0, 0, 0.11);
+  }
+
+  .img-container {
+    width: 200px;
+    min-height: 100%;
+    height: 200px;
+    max-height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .product-info {
+    background: #fff;
+    flex: 3;
+
+    .product-content {
+      padding: 4px 16px;
+
+      p {
+        color: #636363;
+        margin-bottom: 0;
+      }
+
+      .product-colors {
+        float: left;
+        margin-bottom: 47px;
+        margin-left: -36px;
+
+        ul.colors {
+          list-style: none;
+          li {
+            float:right;
+            padding-right: 6px;
+          }
+          li.title {
+            font-weight: bold;
+
+          }
+          li.red {
+            i {
+              color:red;
+            }
+          }
+          li.green {
+            i {
+              color: green;
+            }
+
+          }
+          li.black {
+            i {
+              color: black;
+            }
+          }
+        }
+      }
+
+      ul li {
+        color: #636363;
+        font-size: .9em;
+        margin-left: 0;
+      }
+      .buttons {
+        .button {
+          text-decoration: none;
+          color: #5e5e5e;
+          font-weight: bold;
+          padding: .3em .65em;
+          border-radius: 2.3px;
+          transition: all .1s ease-in-out;
+        }
+        .add {
+          border: 1px #5e5e5e solid;
+          &:hover {
+            border-color: lighten(#588BAE, 5%);
+            color: lighten(#588BAE, 5%);
+          }
+        }
+        .buy {
+          border: 1px #5e5e5e solid;
+          &:hover {
+            border-color: lighten(#588BAE, 5%);
+            color: lighten(#588BAE, 5%);
+          }
+        }
+        #price {
+          color: #5e5e5e;
+          font-weight: bold;
+          float: right;
+          border: 1px solid rgba(#898989, .2);
+          background: rgba(#898989, .04);
+          position: absolute;
+          top: 17px;
+          right: 16px;
+        }
+      }
+    }
+  }
+}
+
+/* add product form */
+  .product-form {
+    width: 80%;
+    padding: 15px 30px;
+    box-shadow: 0px 0px 21px 3px rgba(0,0,0,0.15);
+    border-radius: 6px;
+    margin: 20px 20px;
+    button {
+      background-color: #353a40;
+      color: #e56e2d;
+      margin-bottom: 30px;
+      font-size: 24px;
+      margin-top: 25px;
+    }
+  }
+
+input:focus,
+button:focus,
+textarea:focus {
+  outline: 0;
+  box-shadow: none !important;
+}
+
+input:focus {
+  border-color: #ced4da;
+}
+
+.modal-footer {
+  padding: 10px 16px;
+}

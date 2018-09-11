@@ -1,0 +1,44 @@
+<section class="offer-details">
+  <h4 class="text-center">Offer of ID: {{offers?._id}} Details</h4>
+
+  <div class="user card col-md-8 col-12 px-0 mx-auto">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <div>
+        <p class="mb-0">{{offers?.title}}</p>
+        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+        {{offers?.discound}} Discount
+      </div>
+      <img class="img-fluid user-img" src="{{offers?.imgs}}">
+    </div>
+
+    <div class="card-body">
+      <p><i class="fa fa-id-card-o" aria-hidden="true"></i>
+        {{offers?._id}}
+      </p>
+      <p><i class="fa fa-trophy" aria-hidden="true"></i>
+        {{offers?.brandName}}
+      </p>
+      <p><i *ngIf="offers?.avaliable" class="fa fa-check-circle-o" aria-hidden="true"></i>
+        <i *ngIf="!offers?.avaliable" class="fa fa-times-circle-o" aria-hidden="true"></i>
+        avaliable: <span *ngIf="offers?.avaliable">{{'Yes'}}</span><span *ngIf="!offers?.avaliable">{{'No'}}</span>
+      </p>
+      <p><i class="fa fa-level-up" aria-hidden="true"></i>
+        Before : {{offers?.pricepreDisc}} L.E
+      </p>
+      <p><i class="fa fa-level-down" aria-hidden="true"></i>
+        After Discount: {{offers?.pricepostDisc}} L.E
+      </p>
+
+      <p><i class="fa fa-info" aria-hidden="true"></i>
+        {{offers?.desc}}
+      </p>
+
+      <p class="mb-0"><i class="fa fa-calendar" aria-hidden="true"></i>
+        {{offers?.creationDate}}
+      </p>
+    </div>
+  </div>
+
+
+</section>
+

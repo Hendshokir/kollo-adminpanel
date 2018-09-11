@@ -1,0 +1,137 @@
+<section class="user-details">
+  <h4 class="text-center">User of ID: {{users?._id}} Details</h4>
+
+  <div class="user card col-md-8 col-12 px-0 mx-auto">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <div>
+        <p class="mb-0">{{users?.name}}</p>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <input class="form-control input-point" [ngModel]="users?.poients" (ngModelChange)="users.poients = $event"  value="{{users?.poients}}">
+        <span class="update"> point(s)</span>
+        <i (click)="updatePoint()" class="fa fa-pencil-square-o text-info edit-points" aria-hidden="true"></i>
+      </div>
+      <img class="img-fluid user-img" src="{{users?.img}}">
+
+    </div>
+
+    <div class="card-body">
+      <p><i class="fa fa-phone" aria-hidden="true"></i>
+        {{users?.phone}}
+      </p>
+      <p><i class="fa fa-envelope-o" aria-hidden="true"></i>
+        {{users?.email}}
+      </p>
+      <p class="mb-0"><i class="fa fa-calendar" aria-hidden="true"></i>
+        {{users?.creationDate}}
+      </p>
+    </div>
+  </div>
+  <!-- Offers-order -->
+  <div class="tabs m-3">
+  <ngb-tabset>
+    <ngb-tab title="Offers">
+      <ng-template ngbTabContent>
+        <div class="row mx-0 my-3">
+          <div class="col-lg-4 col-md-6 col-12 " *ngFor="let order of usersOrders; let i = index">
+            <div class="user card">
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <div>
+                  <i class="fa fa-diamond" aria-hidden="true"></i>
+                  <div ngbDropdown class="d-inline-block dropdown">
+                      <input id="dropdownBasic1" [(ngModel)]="this.orderStatus" placeholder="{{order.status}}" ngbDropdownToggle readonly /><i class="fa fa-caret-down" aria-hidden="true"></i>
+                      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button class="dropdown-item" (click)="updateStatus('Accepted')">Accept</button>
+                        <button class="dropdown-item" (click)="updateStatus('Rejected')">Reject</button>
+                        <button class="dropdown-item" (click)="updateStatus('On The Way')">On The Way</button>
+                      </div>
+                    </div>
+                </div>
+              </div>
+
+              <div class="card-body">
+                  <p><i class="fa fa-id-card-o" aria-hidden="true"></i>
+                    {{order?._id}}
+                  </p>
+                  <p><i class="fa fa-money" aria-hidden="true"></i>
+                    Price: {{order?.price}} L.E
+                  </p>
+
+                  <p><i class="fa fa-taxi" aria-hidden="true"></i>
+                    Delivery Price: {{order?.dliveryPrice}} L.E
+                  </p>
+
+                  <p><i class="fa fa-check-square-o" aria-hidden="true"></i>
+                    Total Price: {{order?.total}} L.E
+                  </p>
+                  <p><i class="fa fa-list-ol" aria-hidden="true"></i>
+                    Quantity: {{order?.quantity}}
+                  </p>
+                  <p><i class="fa fa-map-marker" aria-hidden="true"></i>
+                    Address: {{order?.address}}
+                  </p>
+                  <p class="mb-0"><i class="fa fa-calendar" aria-hidden="true"></i>
+                    {{order?.creationDate}}
+                  </p>
+                </div>
+
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab>
+      <ng-template ngbTabTitle>Orders</ng-template>
+      <ng-template ngbTabContent>
+        <div class="row mx-0 my-3">
+          <div class="col-lg-4 col-md-6 col-12 " *ngFor="let order of UserOrdersProducts; let i = index">
+            <div class="user card">
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <div>
+                  <i class="fa fa-diamond" aria-hidden="true"></i>
+                  <div ngbDropdown class="d-inline-block dropdown">
+                      <input id="dropdownBasic1" [(ngModel)]="this.orderStatus" placeholder="{{order.status}}" ngbDropdownToggle readonly /><i class="fa fa-caret-down" aria-hidden="true"></i>
+                      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button class="dropdown-item" (click)="updateStatus('Accepted')">Accept</button>
+                        <button class="dropdown-item" (click)="updateStatus('Rejected')">Reject</button>
+                        <button class="dropdown-item" (click)="updateStatus('On The Way')">On The Way</button>
+                      </div>
+                    </div>
+                </div>
+              </div>
+
+              <div class="card-body">
+                  <p><i class="fa fa-id-card-o" aria-hidden="true"></i>
+                    {{order?._id}}
+                  </p>
+                  <p><i class="fa fa-money" aria-hidden="true"></i>
+                    Price: {{order?.price}} L.E
+                  </p>
+
+                  <p><i class="fa fa-taxi" aria-hidden="true"></i>
+                    Delivery Price: {{order?.dliveryPrice}} L.E
+
+                  </p>
+
+                  <p><i class="fa fa-check-square-o" aria-hidden="true"></i>
+                    Total Price: {{order?.total}} L.E
+                  </p>
+                  <p><i class="fa fa-list-ol" aria-hidden="true"></i>
+                    Quantity: {{order?.quantity}}
+                  </p>
+                  <p><i class="fa fa-map-marker" aria-hidden="true"></i>
+                    Address: {{order?.address}}
+                  </p>
+                  <p class="mb-0"><i class="fa fa-calendar" aria-hidden="true"></i>
+                    {{order?.creationDate}}
+                  </p>
+                </div>
+
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+</div>
+</section>
+

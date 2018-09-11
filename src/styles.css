@@ -1,0 +1,119 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'Lato', sans-serif;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+h4 {
+  font-family: 'Merienda', cursive;
+  margin: 25px 0;
+  color: #E56E1F;
+  font-weight: bold;
+}
+
+a {
+  color: #000;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+/* used in users and user-details */
+.user {
+  margin-bottom: 30px;
+}
+
+.card-header {
+  background-color: #e6e5e5;
+  font-weight: bold;
+  padding: 6px 15px;
+  min-height: 77px;
+}
+
+.card-header .user-name {
+  color: #000;
+}
+
+.card-body {
+  background-color: #f7f7f7;
+  padding: 15px;
+}
+
+.card-body p {
+  line-height: 1.2;
+}
+
+.user.card i {
+  margin-right: 10px;
+  color: #e56e1f;
+}
+
+.user-img {
+  max-width: 64px;
+  max-height: 64px;
+}
+
+.box-statictics {
+  margin: 15px;
+  padding: 15px;
+  font-size: 20px;
+  background-color: #e6e5e5;
+}
+
+.box-statictics i{
+  font-size: 40px;
+}
+
+.box-statictics .num {
+  font-size: 40px;
+  font-family: 'Merienda', cursive;
+}
+
+
+.btn-action {
+  background-color: #E56E1F;
+  border: 1px solid #E56E1F;
+  padding: 10px 30px;
+  color: #fff;
+  min-width: 155px;
+  min-height: 54px;
+}
+
+.btn:active {
+  background-color: #E56E1F !important;
+}
+
+.btn:focus {
+  border: 1px solid #E56E1F;
+  box-shadow: none;
+}
+
+.loader {
+  width: 32px;
+  height: 32px;
+  mix-blend-mode: multiply;
+}
+
+#add-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color : orange;
+  background: rgba(0, 0, 0, 0.7);
+  width: auto;
+  height: auto;
+  padding: 10px;
+  border-radius: 3px;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+}
+
+#add-btn:focus {
+  outline: 0;
+}

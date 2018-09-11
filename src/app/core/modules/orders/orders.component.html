@@ -1,0 +1,120 @@
+<section class="user-details">
+
+  <div class="row mx-0">
+
+      <h4 class="text-center col-12">Orders</h4>
+      <div class="user-statictics col-lg-4 col-md-6 col-12 mx-auto ">
+        <div class="content alert alert-info border-0 d-flex flex-row justify-content-around align-items-center">
+          <i class="fa fa-bar-chart" aria-hidden="true"></i>
+          <div class="text-center font-weight-bold">
+            <div class="num">{{orderAll}}</div>
+            <span>Total Orders</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="user-statictics col-lg-4 col-md-6 col-12 mx-auto">
+        <div class="content alert alert-info border-0 d-flex flex-row justify-content-around align-items-center">
+          <i class="fa fa-question" aria-hidden="true"></i>
+          <div class="text-center font-weight-bold">
+            <div class="num">{{orderPindding}}</div>
+            <span>Total Pindding Orders</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="user-statictics col-lg-4 col-md-6 col-12 mx-auto">
+        <div class="content alert alert-info border-0 d-flex flex-row justify-content-around align-items-center">
+          <i class="fa fa-times-circle-o" aria-hidden="true"></i>
+          <div class="text-center font-weight-bold">
+            <div class="num">{{orderCancle}}</div>
+            <span>Total Cancelled Orders</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="user-statictics col-lg-4 col-md-6 col-12 mx-auto">
+        <div class="content alert alert-info border-0 d-flex flex-row justify-content-around align-items-center">
+          <i class="fa fa-ban" aria-hidden="true"></i>
+          <div class="text-center font-weight-bold">
+            <div class="num">{{orderRejected}}</div>
+            <span>Total Rejected Orders </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="user-statictics col-lg-4 col-md-6 col-12 mx-auto ">
+        <div class="content alert alert-info border-0 d-flex flex-row justify-content-around align-items-center">
+          <i class="fa fa-cart-plus" aria-hidden="true"></i>
+          <div class="text-center font-weight-bold">
+            <div class="num">{{orderAccepted}}</div>
+            <span>Total Accepted Orders</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="user-statictics col-lg-4 col-md-6 col-12 mx-auto ">
+        <div class="content alert alert-info border-0 d-flex flex-row justify-content-around align-items-center">
+          <i class="fa fa-taxi" aria-hidden="true"></i>
+          <div class="text-center font-weight-bold">
+            <div class="num">{{orderOnTheWay}}</div>
+            <span>Total On The way Orders</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="user-statictics col-lg-4 col-md-6 col-12 mx-auto">
+        <div class="content alert alert-info border-0 d-flex flex-row justify-content-around align-items-center">
+          <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+          <div class="text-center font-weight-bold">
+            <div class="num">{{orderDone}}</div>
+            <span>Total Orders Done</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mx-0">
+        <div class="col-lg-4 col-md-6 col-12 " *ngFor="let order of orders; let i = index">
+          <div class="user card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <div>
+                <i class="fa fa-diamond" aria-hidden="true"></i>
+                <div ngbDropdown class="d-inline-block dropdown">
+                    <input id="dropdownBasic1" [(ngModel)]="this.orderStatus" placeholder="{{orders[i].status}}" ngbDropdownToggle readonly /><i class="fa fa-caret-down" aria-hidden="true"></i>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                      <button class="dropdown-item" (click)="updateStatus('Accepted')">Accept</button>
+                      <button class="dropdown-item" (click)="updateStatus('Rejected')">Reject</button>
+                      <button class="dropdown-item" (click)="updateStatus('On The Way')">On The Way</button>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <p><i class="fa fa-money" aria-hidden="true"></i>
+                Price: {{orders[i].productPrice}} L.E
+              </p>
+              <p><i class="fa fa-taxi" aria-hidden="true"></i>
+                Delivery Price: {{orders[i].deliveryPrice}} L.E
+              </p>
+              <p><i class="fa fa-check-square-o" aria-hidden="true"></i>
+                Total Price: {{orders[i].totalPrice}} L.E
+              </p>
+              <p><i class="fa fa-map-marker" aria-hidden="true"></i>
+                Address: {{orders[i].address}}
+              </p>
+              <p><i class="fa fa-info" aria-hidden="true"></i>
+                {{orders[i].notes}}
+              </p>
+              <p  class="mb-0"><i class="fa fa-calendar" aria-hidden="true"></i>
+                {{orders[i].creationDate}}
+              </p>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+</section>

@@ -1,0 +1,37 @@
+<section class="users-page">
+  <h4 class="text-center">Dispaly All Users</h4>
+
+  <div class="box-statictics col-md-6 mx-auto col-12 alert alert-info border-0 d-flex flex-column align-items-center">
+    <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+    <div class="num font-weight-bold">{{usersCount}}</div>
+    <div>Total Users</div>
+  </div>
+  <div class="row mx-0">
+    <div class="col-lg-4 col-md-6 col-12 " *ngFor="let user of users; let i = index">
+      <div class="user card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <div>
+            <p class="mb-0"><a class="user-name" [routerLink]="['/users',users[i]._id]">{{users[i].name}}</a></p>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            {{users[i].poients}} point(s)
+          </div>
+          <a [routerLink]="['/users',users[i]._id]"><img class="img-fluid user-img" src="{{users[i].img}}"></a>
+        </div>
+
+        <div class="card-body">
+          <p><i class="fa fa-phone" aria-hidden="true"></i>
+            {{users[i].phone}}
+          </p>
+          <p><i class="fa fa-envelope-o" aria-hidden="true"></i>
+            {{users[i].email}}
+          </p>
+          <p  class="mb-0"><i class="fa fa-calendar" aria-hidden="true"></i>
+            {{users[i].creationDate}}
+          </p>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

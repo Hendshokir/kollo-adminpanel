@@ -1,0 +1,38 @@
+<section class="dashboard-secction">
+  <nav class="navbar navbar-expand-lg flex-column align-items-start">
+    <a class="navbar-brand w-100" routerLink="/">Kollo Shopping Service</a>
+
+    <div class="d-flex w-100">
+      <ul class="navbar-nav mr-auto flex-column w-100">
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a class="nav-link" routerLink="/">
+            <i class="fa fa-home" aria-hidden="true"></i>Home</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a class="nav-link" routerLink="/users">
+            <i class="fa fa-users" aria-hidden="true"></i>
+            Users
+          </a>
+        </li>
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a class="nav-link" routerLink="/shops">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            Shops
+          </a>
+        </li>
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <a class="nav-link" routerLink="/orders">
+              <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+              Orders
+            </a>
+          </li>
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a class="nav-link" routerLink="/offers">
+            <i class="fa fa-gift" aria-hidden="true"></i>
+            Offers
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</section>

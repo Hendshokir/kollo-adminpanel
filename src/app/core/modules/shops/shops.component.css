@@ -1,0 +1,67 @@
+.edit-icon {
+  cursor: pointer;
+}
+
+.btn-outline-primary {
+  color: #e56e1f;
+  background-color: transparent;
+  background-image: none;
+  border-color: #e56e1f;
+}
+.show>.btn-outline-primary.dropdown-toggle,
+.dropdown-toggle.active {
+  color: #fff;
+  background-color: #e56e1f !important;
+  border-color: #e56e1f !important;
+}
+.btn-outline-primary:hover {
+  color: #fff;
+  background-color: #e56e1f;
+  border-color: #e56e1f;
+}
+primary[_ngcontent-c4]:hover {
+  color: #fff;
+  background-color: #e56e1f;
+  border-color: #e56e1f;
+}
+.show>.btn-outline-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #e56e1f;
+  border-color: #e56e1f;
+  box-shadow: none;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #e56e1f;
+  border-color: #e56e1f;
+}
+
+
+.form-group {
+  max-width: 80%;
+}
+
+label {
+  display: block;
+}
+
+input:focus,
+button:focus,
+.dropdown-toggle:focus {
+  outline: 0;
+  box-shadow: none !important;
+}
+
+input:focus {
+  border-color: #ced4da;
+}
+
+.modal-footer {
+  padding: 10px 16px;
+}
+
+.dropdown .btn {
+  min-width: auto;
+  min-height: auto;
+  padding: 5px 25px;
+}
