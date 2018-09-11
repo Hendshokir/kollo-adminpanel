@@ -11,11 +11,11 @@ export class AuthGuard {
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 
-        if (!this.authService.isAuthenticated()) {
-            this.router.navigate(['login']);
-            console.log('authService.currentUser=>', this.authService.currentUser);
-            return false;
-        }
+        // if (!this.authService.isAuthenticated()) {
+        //     this.router.navigate(['login']);
+        //     console.log('authService.currentUser=>', this.authService.currentUser);
+        //     return false;
+        // }
         return true;
     }
 
